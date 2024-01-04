@@ -37,6 +37,7 @@ const Body = () => {
           Search
         </button>
         {/* <h1 className="search-results">{searchText}</h1> */}
+        
       </div>
       {restaurant.map((restaurant) => (
         <Card
