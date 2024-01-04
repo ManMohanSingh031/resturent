@@ -1,0 +1,73 @@
+/* Navbar styles with added margin */
+.navbar {
+  margin-bottom: 20px;
+}
+
+/* Card container styles with fixed width and flex properties */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px; /* You can adjust this to your desired width */
+  width: 100%; /* Added to make sure it takes the full width */
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  float: right; /* You may remove this line as it's unnecessary for a flex container */
+}
+
+/* Card styles with adjusted width and height */
+.card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card-image {
+  width: 100%;
+  /* height: 150px; Adjust the height as needed */
+  object-fit: cover; /* To maintain aspect ratio */
+  border-bottom: 1px solid #ddd;
+}
+
+/* Other card styles remain the same */
+.card-content {
+  padding: 15px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.card-category {
+  color: #777;
+  margin: 5px 0;
+}
+
+.card-rating {
+  color: #f8d348;
+  margin: 5px 0;
+}
+
+.card-price {
+  color: #27ae60;
+  margin: 10px 0;
+}
+
+.add-to-cart-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2980b9;
+}
