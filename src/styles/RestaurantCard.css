@@ -1,73 +1,163 @@
-/* Navbar styles with added margin */
-.navbar {
-  margin-bottom: 20px;
+:root {
+  --text-color: #1d1c1c;
+  --black: #000000;
 }
 
-/* Card container styles with fixed width and flex properties */
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px; /* You can adjust this to your desired width */
-  width: 100%; /* Added to make sure it takes the full width */
-  margin: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  float: right; /* You may remove this line as it's unnecessary for a flex container */
+/* search container CSS */
+.search-container {
+  margin: 100px auto 20px;
+  text-align: center;
+  max-width: 100%;
+  position: relative;
+
 }
 
-/* Card styles with adjusted width and height */
-.card {
-  width: 100%;
-  height: 100%;
+.search-container .search-input {
+  width: 40%;
   box-sizing: border-box;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #ffffffe9;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  padding: 14px 15px 14px 20px;
+  border: 1px solid #aabcca;
+  border-right: 0;
+  color: #000000;
+  outline: none;
 }
 
-.card-image {
+.search-container .search-btn {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #1275ff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+  color: #ffffff;
+  padding: 15px 22px;
+  margin-left: -4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.search-container .search-btn:hover {
+  background-color: #0a1a78;
+}
+
+/* error message css */
+.error-container {
+  text-align: center;
+  font-size: large;
+  margin: 20px 0;
+}
+
+/* Restaurant cards CSS */
+.restaurant-list {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: -1px 5px 10px 5px rgba(42, 42, 42, 0.2);
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.20);
+}
+
+.card > img {
   width: 100%;
-  /* height: 150px; Adjust the height as needed */
-  object-fit: cover; /* To maintain aspect ratio */
-  border-bottom: 1px solid #ddd;
+  border-radius: 10px;
 }
 
-/* Other card styles remain the same */
-.card-content {
-  padding: 15px;
+.card > h5 {
+  font-weight: lighter;
 }
 
-.card-body {
+.card > span {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
   text-align: center;
 }
 
-.card-title {
-  font-size: 1.5em;
-  margin: 0;
+.card > span > h4 {
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 0 2px 0;
+  margin-top: 10px;
 }
 
-.card-category {
-  color: #777;
-  margin: 5px 0;
-}
-
-.card-rating {
-  color: #f8d348;
-  margin: 5px 0;
-}
-
-.card-price {
-  color: #27ae60;
-  margin: 10px 0;
-}
-
-.add-to-cart-btn {
-  background-color: #3498db;
-  color: #fff;
-  padding: 8px 15px;
-  border: none;
+.card > span > h4:first-child {
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
 }
 
-.add-to-cart-btn:hover {
-  background-color: #2980b9;
+.card > span > h4:first-child .fa-star {
+  font-size: 10px;
+  padding: 0 5px 3px 0;
+}
+
+
+
+
+/*Shimmer CSS */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.shimmer-card {
+  flex-basis: 250px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+.shimmer-title {
+  width: 60%;
+  margin-top: 10px;
+}
+.shimmer-tags {
+  width: 80%;
+  margin-top: 4px;
+}
+.shimmer-details {
+  width: 100%;
+  margin-top: 18px;
+}
+.shimmer-container .shimmer-img {
+  height: 144px;
+  width: 230px;
+}
+
+/*Animation to Shimmer Component Cards */
+.stroke {
+  height: 15px;
+  background: #777;
+}
+.animate {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
 }

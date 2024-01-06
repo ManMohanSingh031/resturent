@@ -1,19 +1,36 @@
-import React from 'react'
-import "../styles/RestaurantCard.css";
-import {IMG_CDN_URL} from "./Constant";
+import React from "react";
+import { IMG_CDN_URL } from "../Constant";
 
-const RestaurantCard = ({name, cuisines, cloudinaryImageId, lastMileTravelString }) => {
+// Restaurant card component: Image, name, cuisine
+const RestaurantCard = ({
+  cloudinaryImageId,
+  name,
+  cuisines,
+  areaName,
+  sla,
+  costForTwo,
+  avgRatingString,
+}) => {
+  if (!cloudinaryImageId) {
+    // If not available, return null to render nothing
+    return null;
+  }
   return (
-    <div className='cards-container'>
-      <img src={IMG_CDN_URL + cloudinaryImageId} alt="food" className='card-image' />
-      <div className='card-content'>
-        <div className='card-body'>
-          <h2 className='card-title'>{name}</h2>
-          <p className='card-category'>{cuisines?.join(', ')}</p>
-          <p className='card-rating'>{lastMileTravelString} minutes</p>
-          <button className='add-to-cart-btn'>Add to Cart</button>
-        </div>
-      </div>
+    <div className="card">
+      <img src={IMG_CDN_URL + cloudinaryImageId} />
+      <h3>{name}</h3>
+      <h5>{cuisines?.join(", ")}</h5>
+      <h5>{areaName}</h5>
+      <span>
+        <h4>
+          <i className="fa-solid fa-star"></i>
+          {avgRatingString}
+        </h4>
+        <h4>•</h4>
+        <h4>{sla?.lastMileTravelString ?? "2.0 km"}</h4>
+        <h4>•</h4>
+        <h4>{costForTwo ?? "₹200 for two"}</h4>
+      </span>
     </div>
   );
 };

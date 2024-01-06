@@ -1,31 +1,81 @@
-.App-logo {
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-}
-
-.nav-items {
+/* Select all CSS */
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* create global variable with :root selector */
+  :root {
+    --header-bg-color: rgb(108, 100, 249);
+    --footer-bg-color: rgb(1, 163, 144);
+    --text-color: #000;
+    --light-green: #000000;
+    --dark-red: #ff0000;
+    --blue: #0000ff;
+    --light-red: rgb(236, 56, 56);
+  }
+  
+  /* Header CSS */
+  .header {
     display: flex;
-    align-items: center; /* Center items vertically */
-    color: #fff;
-    background-color: black;
     justify-content: space-between;
-    flex-wrap: nowrap;
-}
-
-.nav-items ul {
-    display: flex;
-    list-style: none;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-}
-
-.nav-items li {
-    padding: 10px;
-    margin: 20px;
-    font-size: 20px;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background-color: var(--header-bg-color);
+    border-radius: 5px;
+    box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
     font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow-y: hidden;
+  }
+  
+.logo {
+    padding: 10px 0 10px 15px;
+    margin: 0 10px;
+    width: 100px;
+  }
+  
+  /* nav items CSS */
+  .nav-items > ul {
+    list-style-type: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
+  
+  .nav-items > ul > li {
+    padding: 20px;
+    font-size: large;
     cursor: pointer;
-}
+  }
+  
+  .nav-items > ul > li .logout-btn,
+  .nav-items > ul > li .login-btn {
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    margin-right: 50px;
+  }
+  
+  .nav-items > ul > li .logout-btn {
+    background-color: var(--blue);
+  }
+  
+  .nav-items > ul > li .login-btn {
+    background-color: var(--light-red);
+  }
+  
+  .nav-items > ul > li .logout-btn:hover,
+  .nav-items > ul > li .login-btn:hover {
+    background-color: var(--dark-red);
+  }
